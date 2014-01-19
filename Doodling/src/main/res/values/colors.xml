@@ -1,0 +1,9 @@
+<resources>
+
+    <color name="black_overlay">#66000000</color>
+
+
+    <color name="imageview_button_selected">#6633b5e5</color>
+    <color name="imageview_button_transparent">#00FFFFFF</color>
+
+</resources>

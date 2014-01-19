@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Doodling</string>
+
+    <string name="title_activity_draw">DrawActivity</string>
+
+    <string name="draw_menu_save">Save</string>
+    <string name="draw_menu_discard">Discard</string>
+
+    <string name="input_mode">Input mode</string>
+    <string name="input_mode_brush">Brush</string>
+    <string name="input_mode_erase">Erase</string>
+
+    <string name="navigation_tab_title">Doodle</string>
+
+    <string name="alert_confirm">Yes</string>
+    <string name="alert_cancel">Cancel</string>
+    <string name="alert_title_save_doodle">Save doodle?</string>
+    <string name="alert_message_save_doodle">Doodle will be saved to device Gallery</string>
+    <string name="alert_title_discard_doodle">Discard doodle?</string>
+    <string name="alert_message_discard_doodle">You will lose the current doodle</string>
+
+    <string name="toast_doodle_saved">Doodle saved to Gallery!</string>
+    <string name="toast_doodle_saved_failed">Oops! Doodle could not be saved.</string>
+    <string name="toast_brush_selected">Brush selected!</string>
+    <string name="toast_eraser_selected">Eraser selected!</string>
+
+
+
+</resources>

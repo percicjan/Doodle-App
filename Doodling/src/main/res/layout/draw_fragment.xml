@@ -1,0 +1,62 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFCCCCCC"
+    android:orientation="vertical">
+
+
+    <com.percicjan.doodling.views.DrawView
+        android:id="@+id/activity_draw.drawing_canvas"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="3dp"
+        android:layout_weight="1"
+        android:background="#FFFFFFFF" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <SeekBar
+            android:id="@+id/activity_draw.size_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/activity_draw.input_mode"
+            android:max="35"/>
+
+        <RelativeLayout
+            android:id="@id/activity_draw.input_mode"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/activity_draw.input_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@drawable/imageview_button_background"
+                android:contentDescription="@string/input_mode"
+                android:src="@drawable/holo_light_input_draw"/>
+
+            <ImageView
+                android:id="@+id/activity_draw.input_size"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:src="@drawable/circle_light"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,8 @@
+.gradle
+.idea
+.DS_Stores
+Doodling-Doodling.iml
+Doodling.iml
+Doodling/build
+local.properties
+
