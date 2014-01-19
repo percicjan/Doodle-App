@@ -15,6 +15,7 @@ import android.view.View;
 
 /**
  * Created by janpercic on 11. 01. 14.
+ * DrawView class contains the code for the doodle area.
  */
 
 public class DrawView extends View {

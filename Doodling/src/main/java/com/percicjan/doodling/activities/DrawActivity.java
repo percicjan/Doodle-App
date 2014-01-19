@@ -30,6 +30,9 @@ import java.util.List;
 
 /**
  * Created by janpercic on 11. 01. 14.
+ * DrawActivity is the activity that is called when the app opens. In this activity
+ * a JSON file for colors is read and navigation tabs and fragments in viewpager are
+ * created.
  */
 
 public class DrawActivity extends FragmentActivity {

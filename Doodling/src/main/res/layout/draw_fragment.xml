@@ -47,14 +47,35 @@
                 android:contentDescription="@string/input_mode"
                 android:src="@drawable/holo_light_input_draw"/>
 
-            <ImageView
-                android:id="@+id/activity_draw.input_size"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:layout_gravity="center"
-                android:src="@drawable/circle_light"
-                android:visibility="gone"/>
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/activity_draw.input_size_max"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:src="@drawable/circle_light"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/activity_draw.input_size"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:src="@drawable/circle_dark"
+                    android:visibility="gone"/>
+            </RelativeLayout>
 
         </RelativeLayout>
     </RelativeLayout>

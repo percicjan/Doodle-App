@@ -5,6 +5,12 @@ import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
+/**
+ * Created by janpercic on 11. 01. 14.
+ * Custom view pager class. CustomViewPager overrides onInterceptTouchEvent
+ * and returns false to disable unwanted scrolling between fragments.
+ */
+
 public class CustomViewPager extends ViewPager {
 
     public CustomViewPager(Context context) {

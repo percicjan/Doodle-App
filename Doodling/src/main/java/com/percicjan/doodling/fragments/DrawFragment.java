@@ -29,6 +29,8 @@ import java.util.UUID;
 
 /**
  * Created by janpercic on 12. 01. 14.
+ * DrawFragments contains code for fragment instance that is displayed in viewpager
+ * and includes everything below navigation tabs.
  */
 
 public class DrawFragment extends Fragment {
@@ -47,6 +49,7 @@ public class DrawFragment extends Fragment {
     private SeekBar mBrushSizeSeekBar;
     private ImageButton mInputModeButton;
     private ImageView mInputSizeView;
+    private ImageView mInputSizeMaxView;
 
     // Initial setup
     private int mInitialBrushSize = 20;
@@ -101,12 +104,20 @@ public class DrawFragment extends Fragment {
             }
         });
 
+        // Get screen density to scale brush size
+        final float scale = getResources().getDisplayMetrics().density;
+
         // Set up view for initial size of brush with respect for screen density
         mInputSizeView = (ImageView) rootView.findViewById(R.id.activity_draw_input_size);
-        final float scale = getResources().getDisplayMetrics().density; // Get screen density
         int initialBrushSize = ((int) (mInitialBrushSize * scale + 0.5f)); // Use screen density for correct size
         RelativeLayout.LayoutParams initialLayoutParams = new RelativeLayout.LayoutParams(initialBrushSize, initialBrushSize);
         mInputSizeView.setLayoutParams(initialLayoutParams);
+
+        // Set up view for max size of brush with respect for screen density
+        mInputSizeMaxView = (ImageView) rootView.findViewById(R.id.activity_draw_input_size_max);
+        int maxBrushSize = ((int) (40 * scale + 0.5f)); // Use screen density for correct size
+        RelativeLayout.LayoutParams maxLayoutParams = new RelativeLayout.LayoutParams(maxBrushSize, maxBrushSize);
+        mInputSizeMaxView.setLayoutParams(maxLayoutParams);
 
         // Init seek bar to change brush size
         mBrushSizeSeekBar = (SeekBar) rootView.findViewById(R.id.activity_draw_size_seekbar);
@@ -126,6 +137,7 @@ public class DrawFragment extends Fragment {
                 // While tracking display view for brush size
                 mInputModeButton.setVisibility(View.GONE);
                 mInputSizeView.setVisibility(View.VISIBLE);
+                mInputSizeMaxView.setVisibility(View.VISIBLE);
             }
 
             @Override
@@ -133,6 +145,7 @@ public class DrawFragment extends Fragment {
                 // When not tracking show input mode view
                 mInputModeButton.setVisibility(View.VISIBLE);
                 mInputSizeView.setVisibility(View.GONE);
+                mInputSizeMaxView.setVisibility(View.GONE);
             }
         });
 

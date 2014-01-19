@@ -5,6 +5,8 @@ import android.view.View;
 
 /**
  * Created by janpercic on 13. 01. 14.
+ * Class for custom transition in viewpager. Source code for this transition is
+ * available at http://developer.android.com/training/animation/screen-slide.html
  */
 
 public class CustomPageTransformer implements ViewPager.PageTransformer {
