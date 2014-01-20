@@ -54,6 +54,7 @@ public class DrawFragment extends Fragment {
     // Initial setup
     private int mInitialBrushSize = 20;
     private boolean mInputIsBrush = true;
+    private int mFragmentNumber;
 
     public DrawFragment(Context context, boolean firstFragment, String backgroundColor, String foregroundColor) {
         mContext = context;
@@ -72,9 +73,11 @@ public class DrawFragment extends Fragment {
         if (mFirstFragment) {
             mBackgroundBackupColor = "#000000";
             mForegroundBackupColor = "#FFFFFF";
+            mFragmentNumber = 1;
         } else {
             mBackgroundBackupColor = "#FFFFFF";
             mForegroundBackupColor = "#000000";
+            mFragmentNumber = 2;
         }
 
         // Set up brush color initial size
@@ -83,14 +86,14 @@ public class DrawFragment extends Fragment {
         try {
             mDrawView.setBackgroundColor(Color.parseColor(mBackgroundColor));
         } catch (Exception ex) {
-            Log.e("BUREK", "Background color exception");
+            Log.e("DOODLE", "Background color exception");
             mBackgroundColor = mBackgroundBackupColor;
             mDrawView.setBackgroundColor(Color.parseColor(mBackgroundColor));
         }
         try {
             mDrawView.setBrushColor(mForegroundColor);
         } catch (Exception ex) {
-            Log.e("BUREK", "Foreground color exception");
+            Log.e("DOODLE", "Foreground color exception");
             mForegroundColor = mForegroundBackupColor;
             mDrawView.setBrushColor(mForegroundColor);
         }
@@ -179,7 +182,7 @@ public class DrawFragment extends Fragment {
      */
     public void saveDrawing() {
         AlertDialog.Builder saveDialog = new AlertDialog.Builder(mContext);
-        saveDialog.setTitle(R.string.alert_title_save_doodle);
+        saveDialog.setTitle(getResources().getString(R.string.alert_title_save_doodle) + " " + mFragmentNumber + "?");
         saveDialog.setMessage(R.string.alert_message_save_doodle);
 
         saveDialog.setPositiveButton(R.string.alert_confirm, new DialogInterface.OnClickListener(){
@@ -188,7 +191,7 @@ public class DrawFragment extends Fragment {
                 File folderPath = new File(Environment.getExternalStorageDirectory() + "/Doodle/");
                 if (!folderPath.exists()) { // If the folder does not exist
                     folderPath.mkdirs(); // Create folder
-                    Log.e("BUREK", "Folder for doodles created");
+//                    Log.e("DOODLE", "Folder for doodles created");
                 }
                 File doodleFile = new File(folderPath, UUID.randomUUID().toString() + ".png"); // random name
                 if (doodleFile.exists()) // If random name exist
@@ -227,7 +230,7 @@ public class DrawFragment extends Fragment {
      */
     public void deleteDrawing() {
         AlertDialog.Builder newDialog = new AlertDialog.Builder(mContext);
-        newDialog.setTitle(R.string.alert_title_discard_doodle);
+        newDialog.setTitle(getResources().getString(R.string.alert_title_discard_doodle) + " " + mFragmentNumber + "?");
         newDialog.setMessage(R.string.alert_message_discard_doodle);
 
         newDialog.setPositiveButton(R.string.alert_confirm, new DialogInterface.OnClickListener(){

@@ -153,7 +153,7 @@ public class DrawActivity extends FragmentActivity {
             }
             mColorsStream.close();
         } catch (Exception exc) {
-            Log.e("BUREK", "Error reading file");
+            Log.e("DOODLE", "Error reading file");
         }
         String jsonString = writer.toString();
         try {
@@ -164,7 +164,7 @@ public class DrawActivity extends FragmentActivity {
             mColorsArray[2] = colorJson.getString("background_2");
             mColorsArray[3] = colorJson.getString("foreground_2");
         } catch (JSONException ex) {
-            Log.e("BUREK", "JSONException - " + ex);
+            Log.e("DOODLE", "JSONException - " + ex);
         }
     }
 
